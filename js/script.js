@@ -84,8 +84,27 @@ function thirdTask() {
 console.log(result)
 }
 
-
-
-
-    
+//pyramide2
+let rows = 6;
+let maxStars = rows * 2 - 1;
+let startPoint = (maxStars - 1) / 2;
+let result2 = '';
+for (let row = 1; row <= rows; row++) {
+    let i = 1;
+    let starsInRow = 1; //скока звезд в этом ряду
+    while (i < row) {
+        starsInRow = starsInRow + 2;
+        i++;
+    }
+    let Shift = (starsInRow - 1) / 2; //сколько звезд по каждую сторону от центральной
+    for (let col = 0; col < maxStars; col++) {
+        if (col < (startPoint - Shift) || col > (startPoint + Shift)) {
+            result2 = result2 + ' ';
+        } else {
+            result2 = result2 + '*';
+        }
+    }
+    result2 = result2 + '\n';
+}
+console.log(result2);
 
